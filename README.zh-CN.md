@@ -25,6 +25,7 @@ python -m pip install -r requirements.txt
 | [02 · 清洗与派生变量](notebooks/02_clean_and_derive.ipynb) | 核对清洗前后的样本量与价格，计算车龄，并在本地生成 `data/processed/listings.csv`。 |
 | [03 · 挂牌价、车龄与里程](notebooks/03_price_age_mileage.ipynb) | 绘制价格分布和分箱密度图，检查极端价格，比较不同筛选条件下的相关系数。 |
 | [04 · 按车辆类别和州比较](notebooks/04_categories_and_states.ipynb) | 比较车况、燃料、车型和品牌的价格分布，按州展示中位数及样本量。 |
+| [05 · 控制变量后的关联与价格预测](notebooks/05_adjusted_associations_and_prediction.ipynb) | 对挂牌价取对数后做回归，并用较晚发布的挂牌比较中位数基线、岭回归和梯度提升树。 |
 
 分析保留正挂牌价，并给特别低或高的价格加复核标记。每项分析使用该问题所需字段齐全的记录，并报告相应的样本量。具体筛选规则及其影响见清洗与分析 notebooks。
 

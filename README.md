@@ -25,6 +25,7 @@ Follow [DATA.md](DATA.md) to get the versioned Kaggle file at `data/raw/vehicles
 | [02 · Clean and derive](notebooks/02_clean_and_derive.ipynb) | Audits how cleaning changes row counts and price, derives vehicle age, and writes `data/processed/listings.csv` locally. |
 | [03 · Price, age, and mileage](notebooks/03_price_age_mileage.ipynb) | Plots price distributions and relationships, checks extreme prices, and reports correlations with sensitivity checks. |
 | [04 · Categories and states](notebooks/04_categories_and_states.ipynb) | Compares prices across condition, fuel, vehicle type, and manufacturer, and ranks state medians with sample sizes. |
+| [05 · Adjusted associations and prediction](notebooks/05_adjusted_associations_and_prediction.ipynb) | Fits log-price regression and compares a median baseline, ridge regression, and boosted trees on later listings. |
 
 The notebooks retain positive prices, flagging very low or high prices for review. Missing fields are handled separately for each question; each plot or summary reports the relevant sample size. See the cleaning and analysis notebooks for the exact rules and their effect.
 
