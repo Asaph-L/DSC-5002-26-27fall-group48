@@ -4,7 +4,7 @@
 
 这是 SDSC 5002 的小组项目。我们用探索性数据分析研究二手车挂牌价如何随车龄、里程表读数、车辆属性和所在州而变化。分析以卖家在 Craigslist 上的报价为对象，结论限于样本中观察到的关联。
 
-[项目提案](docs/proposal.zh-CN.md) · [数据来源与准备](DATA.zh-CN.md)
+[项目提案](docs/proposal.zh-CN.md) · [数据来源与准备](DATA.zh-CN.md) · [图表索引](figures/README.md)
 
 ## 运行 notebooks
 

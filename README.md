@@ -4,7 +4,7 @@
 
 SDSC 5002 team project. We use exploratory data analysis to study how advertised used vehicle prices vary with age, odometer reading, vehicle attributes, and state. The dataset records asking prices for Craigslist listings; it does not measure completed sales or establish causal effects.
 
-[Project proposal](docs/proposal.md) · [Data source and setup](DATA.md)
+[Project proposal](docs/proposal.md) · [Data source and setup](DATA.md) · [Figure gallery](figures/README.md)
 
 ## Run the notebooks
 
