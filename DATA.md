@@ -27,6 +27,12 @@ python -c "import hashlib; f=open('data/raw/vehicles.csv','rb'); print(hashlib.f
 
 Use [01 · Import and profile](notebooks/01_import_and_profile.ipynb) to check the header and row count before cleaning. Keep the version and file fingerprint with any results you share.
 
+## Group 48 cleaned ZIP
+
+The 4.74 MB archive contains the original `listings.csv` produced by notebook 02, with 393,985 rows and 18 columns. Extract it to `data/processed/listings.csv` to run notebooks 03 and 04. The archive includes bilingual setup instructions and a checksum. Notebooks that read the original Kaggle snapshot still require `data/raw/vehicles.csv`. [Download the cleaned ZIP](downloads/DSC5002_Group48_cleaned_listings.zip)
+
 ## What belongs in GitHub
 
-Kaggle lists the dataset as **CC0: Public Domain**. The original listings may include seller-entered descriptions, vehicle identifiers, precise locations and links. [Craigslist's terms](https://www.craigslist.org/about/terms.of.use/en) restrict redistribution of posting content; the CSV also exceeds [GitHub's ordinary 100 MiB file limit](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github). Team members obtain the same snapshot from Kaggle. Keep raw and processed listings in the local `data/` folder, which Git ignores, and share code plus reviewed aggregate charts and tables. Do not publish individual listing records, URLs, descriptions, VINs, or coordinates in notebook outputs.
+Kaggle lists the dataset as **CC0: Public Domain**. The original listings may include seller-entered descriptions, vehicle identifiers, precise locations and links. [Craigslist's terms](https://www.craigslist.org/about/terms.of.use/en) restrict redistribution of posting content; the CSV also exceeds [GitHub's ordinary 100 MiB file limit](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github). Team members obtain the same raw snapshot from Kaggle and store it in the ignored local `data/` folder.
+
+The approved cleaned ZIP above is the only public row-level snapshot for this project. It contains structured analysis fields such as asking price, model year, mileage and state. Listing IDs, URLs, descriptions, VINs and coordinates are excluded from the archive. Keep other locally generated data and caches in ignored directories. Public notebook outputs use aggregate charts and tables.
