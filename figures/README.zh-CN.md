@@ -85,11 +85,3 @@
 | 各时间验证窗口的模型误差 | [PNG](validation/rolling_validation_mae.png) · [PDF](validation/rolling_validation_mae.pdf) |
 | 不同挂牌价与车龄段的模型误差 | [PNG](validation/price_and_age_error_profile.png) · [PDF](validation/price_and_age_error_profile.pdf) |
 | 移除特征组后的模型误差 | [PNG](validation/feature_ablation.png) · [PDF](validation/feature_ablation.pdf) |
-
-## 初版海报预览
-
-该预览对应深入研究前的海报版本，署名已省略。
-
-| 图表 | 下载 |
-| --- | --- |
-| 第 48 组海报公开预览 | [PNG](poster/group48_poster_public_preview.png) |

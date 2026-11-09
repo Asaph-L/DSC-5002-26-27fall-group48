@@ -85,11 +85,3 @@ The figures use the Kaggle v10 Craigslist dataset. Prices are advertised in USD.
 | Model error across validation windows | [PNG](validation/rolling_validation_mae.png) · [PDF](validation/rolling_validation_mae.pdf) |
 | Model error by asking price and age | [PNG](validation/price_and_age_error_profile.png) · [PDF](validation/price_and_age_error_profile.pdf) |
 | Model error after removing feature groups | [PNG](validation/feature_ablation.png) · [PDF](validation/feature_ablation.pdf) |
-
-## Original poster preview
-
-This preview shows the poster from before the follow-up analysis, with the author byline omitted.
-
-| Figure | Download |
-| --- | --- |
-| Group 48 poster preview | [PNG](poster/group48_poster_public_preview.png) |
