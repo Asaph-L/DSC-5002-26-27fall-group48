@@ -1,5 +1,7 @@
 # Craigslist Used Vehicle Asking Prices
 
+[简体中文](README.zh-CN.md)
+
 SDSC 5002 team project. We use exploratory data analysis to study how advertised used vehicle prices vary with age, odometer reading, vehicle attributes, and state. The dataset records asking prices for Craigslist listings; it does not measure completed sales or establish causal effects.
 
 [Project proposal](docs/proposal.md) · [Data source and setup](DATA.md)

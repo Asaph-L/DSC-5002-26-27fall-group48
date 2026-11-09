@@ -1,5 +1,7 @@
 # Exploring Factors Associated with Used Vehicle Listing Prices on Craigslist
 
+[简体中文](proposal.zh-CN.md)
+
 **Project Proposal · SDSC 5002 team project**
 
 ## Introduction

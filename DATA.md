@@ -1,5 +1,7 @@
 # Data source and setup
 
+[简体中文](DATA.zh-CN.md)
+
 This project uses Austin Reese's [Used Cars Dataset (Craigslist Cars & Trucks Data)](https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data) on Kaggle. Use [version 10](https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data/versions/10), released on 6 May 2021 with posting dates. The project pins that snapshot because the proposal describes roughly 426,880 listings and 26 columns; newer versions may have a different population. The recorded price is a seller's advertised asking price in USD, and a listing does not establish a sale.
 
 ## Get the file
