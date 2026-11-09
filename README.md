@@ -29,6 +29,20 @@ Follow [DATA.md](DATA.md) to get the versioned Kaggle file at `data/raw/vehicles
 
 The notebooks retain positive prices, flagging very low or high prices for review. Missing fields are handled separately for each question; each plot or summary reports the relevant sample size. See the cleaning and analysis notebooks for the exact rules and their effect.
 
+## Follow-up research
+
+Run these notebooks once the original Kaggle CSV is available. They rebuild any missing local data or model cache and save shareable aggregate figures and tables to `outputs/`.
+
+| Notebook | Analysis |
+| --- | --- |
+| [06 · Distribution and anomalies](notebooks/06_price_distribution_and_anomalies.ipynb) | Robust summaries, cumulative and tail distributions, price heaping, screening by group, and peer-relative anomaly flags. |
+| [07 · Age and mileage](notebooks/07_age_mileage_nonlinearity.ipynb) | Nonlinear curves with intervals, an interaction heatmap, quantile prediction, and overlap checks on the oldest vehicles. |
+| [08 · Vehicle groups](notebooks/08_comparable_vehicle_groups.ipynb) | Distributions and missing condition labels, plus vehicle-mix adjustment and bootstrap intervals for four planned comparisons. |
+| [09 · State differences](notebooks/09_state_price_differences.ipynb) | Raw state medians, gaps against a geography-free model, maps, rank shifts, and sensitivity across models and dates. The first run downloads the pinned [U.S. Atlas](https://github.com/topojson/us-atlas) state boundaries. |
+| [10 · Rolling validation](notebooks/10_rolling_validation_and_error_analysis.ipynb) | Five benchmarks across three April blocks, a separate historical May comparison, duplicate-rule checks, and segmented error and feature diagnostics. |
+
+Keep the price scope with each finding. The raw summaries describe positive listings. The dated prediction experiments use the $500–$150,000 cohort, and some adjusted comparisons require a smaller overlap sample.
+
 ## Work together
 
 Use issues to track tasks and questions. Create a branch for each change and open a pull request with a short summary, the notebooks you reran, and any changes to filters or results. Coordinate before editing the same notebook to avoid conflicts. Keep shared transformations in `src/`, with notebook code focused on the analysis. Keep only reviewed aggregate figures and tables in notebook outputs; do not commit source or processed data, listing descriptions, identifiers, or credentials.

@@ -99,30 +99,34 @@ def _model_frame(frame):
     return prepared
 
 
-def prediction_scores(train, test):
-    """Evaluate fixed model specifications on the same held-out USD targets."""
+def price_estimators(numeric=NUMERIC, categorical=CATEGORICAL):
+    """Build the baseline, ridge and boosting specifications used in notebook 05."""
     linear_inputs = ColumnTransformer([
-        ("numeric", make_pipeline(SimpleImputer(strategy="median", add_indicator=True), StandardScaler()), list(NUMERIC)),
-        ("categories", OneHotEncoder(handle_unknown="ignore"), list(CATEGORICAL)),
+        ("numeric", make_pipeline(SimpleImputer(strategy="median", add_indicator=True), StandardScaler()), list(numeric)),
+        ("categories", OneHotEncoder(handle_unknown="ignore"), list(categorical)),
     ])
     tree_inputs = ColumnTransformer([
-        ("numeric", "passthrough", list(NUMERIC)),
-        ("categories", OrdinalEncoder(handle_unknown="use_encoded_value", unknown_value=-1), list(CATEGORICAL)),
+        ("numeric", "passthrough", list(numeric)),
+        ("categories", OrdinalEncoder(handle_unknown="use_encoded_value", unknown_value=-1), list(categorical)),
     ])
     ridge = make_pipeline(linear_inputs, Ridge(alpha=10, solver="lsqr"))
     boosting = make_pipeline(tree_inputs, HistGradientBoostingRegressor(
-        categorical_features=[False] * len(NUMERIC) + [True] * len(CATEGORICAL),
+        categorical_features=[False] * len(numeric) + [True] * len(categorical),
         max_iter=180, max_leaf_nodes=31, min_samples_leaf=45,
         learning_rate=0.08, l2_regularization=1.0, early_stopping=False, random_state=SEED,
     ))
-    models = {
+    return {
         "Training median": DummyRegressor(strategy="median"),
         "Log-price ridge": TransformedTargetRegressor(regressor=ridge, func=np.log, inverse_func=np.exp),
         "Gradient boosting": TransformedTargetRegressor(regressor=boosting, func=np.log, inverse_func=np.exp),
     }
+
+
+def prediction_scores(train, test):
+    """Evaluate fixed model specifications on the same held-out USD targets."""
     scores = []
     with threadpool_limits(limits=4):
-        for label, model in models.items():
+        for label, model in price_estimators().items():
             model.fit(train[FEATURES], train["price"])
             estimate = model.predict(test[FEATURES])
             actual = test["price"]

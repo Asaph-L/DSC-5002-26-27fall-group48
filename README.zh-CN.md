@@ -29,6 +29,20 @@ python -m pip install -r requirements.txt
 
 分析保留正挂牌价，并给特别低或高的价格加复核标记。每项分析使用该问题所需字段齐全的记录，并报告相应的样本量。具体筛选规则及其影响见清洗与分析 notebooks。
 
+## 深入研究
+
+准备好 Kaggle 原始 CSV 后即可运行下列 notebooks。首次运行会创建所需的本地数据或模型缓存，并把可分享的汇总图表保存到 `outputs/`。
+
+| Notebook | 内容 |
+| --- | --- |
+| [06 · 价格分布与异常值](notebooks/06_price_distribution_and_anomalies.ipynb) | 稳健统计、累积分布、尾部概率、价格尾数堆积、分组筛选影响和同类车辆异常筛查。 |
+| [07 · 车龄与里程](notebooks/07_age_mileage_nonlinearity.ipynb) | 带区间的非线性曲线、交互热图、分位数预测，以及老车价格回升的可比样本检验。 |
+| [08 · 车辆类别](notebooks/08_comparable_vehicle_groups.ipynb) | 分组价格分布、车况缺失，以及四组预设比较的车辆构成调整和 Bootstrap 区间。 |
+| [09 · 州别差异](notebooks/09_state_price_differences.ipynb) | 州别原始中位数、对照不含地理字段的模型所得价差、地图、排名变化和稳健性检查。首次运行会下载指定版本的 [U.S. Atlas](https://github.com/topojson/us-atlas) 州界。 |
+| [10 · 时间滚动验证](notebooks/10_rolling_validation_and_error_analysis.ipynb) | 在三个 4 月时间段比较五种方法，单列 5 月历史对照，并检查重复挂牌规则、分组误差及移除特征后的影响。 |
+
+引用结果时请保留样本口径。描述性分析覆盖全部正挂牌价，按时间做预测的实验使用 500–150,000 美元的样本，部分调整比较还要求车辆特征可比。
+
 ## 小组协作
 
 用 GitHub Issues 记录任务和待解决的问题。每次修改开一个分支，通过 Pull Request 简述改动、重新运行了哪些 notebooks，以及筛选条件或结果是否有变化。修改同一个 notebook 前先在组内协调。把共用的数据处理逻辑放在 `src/`，在 notebooks 中呈现分析。提交前检查输出，只保留汇总表和图；数据文件、原始刊登内容、标识符和凭据留在本地。修改分析口径时，请同步更新中英文版本。

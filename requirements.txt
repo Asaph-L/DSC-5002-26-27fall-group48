@@ -4,3 +4,5 @@ matplotlib>=3.10,<4
 jupyterlab>=4,<5
 scikit-learn>=1.5.1,<2
 statsmodels>=0.14.5,<0.15
+pyarrow>=14
+catboost>=1.2,<2
